@@ -37,13 +37,12 @@ var config= {
           test: /\.js?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-
-          query: {
-            presets: ['es2015',"stage-0"],
-            plugins: [
-			    "transform-decorators-legacy",
-		    ]
-          }
+          // query: {
+          //   presets: ['es2015',"stage-0"],
+          //   plugins: [
+    			   //  "transform-decorators-legacy",
+    		    // ]
+          // }
         },
         {
             test: /\.scss$/,

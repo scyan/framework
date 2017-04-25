@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEV=1 webpack-dev-server --devtool eval-source-map --progress --colors --hot --inline --open --host 0.0.0.0 --port 9100",
-    "build": "gulp build"
+    "build": "gulp build",
+    "build2": "gulp build2"
   },
   "author": "",
   "license": "ISC",
@@ -14,12 +15,17 @@
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
+    "babel-plugin-module-alias": "^1.6.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "del": "^2.2.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
     "node-sass": "^4.5.2",
     "postcss-loader": "^1.3.3",
@@ -28,5 +34,9 @@
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }
