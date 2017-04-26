@@ -14,22 +14,20 @@ gulp.task('clean', (cb) => {
     });
 });
 
-gulp.task('publish:js', function() {
+gulp.task('publish:js',['clean'], function() {
   gulp.src(['src/**/*.js'])
-    .pipe(babel({
-            presets: ['es2015',"stage-0"]
-        }))
+    .pipe(babel())
     .pipe(gulp.dest('lib/'));
 });
-gulp.task('publish:css', function() {
-  gulp.src('src/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('lib'));
-  // gulp.src(['src/*.scss'])
-  //   .pipe(gulp.dest('lib/'));
+gulp.task('publish:css', ['clean'],function() {
+  // gulp.src('src/**/*.scss')
+  //   .pipe(sass().on('error', sass.logError))
+  //   .pipe(gulp.dest('lib'));
+  gulp.src(['src/**/*.scss'])
+    .pipe(gulp.dest('lib/'));
 });
 
-gulp.task('publish',function() {
+gulp.task('publish',['clean'],function() {
   webpack(getWebpackConfig, function (err, stats) {
     if (err) { gutil.log(err);}
 
@@ -40,7 +38,7 @@ gulp.task('publish',function() {
   });
 })
 //浏览器化
-gulp.task('build', ['clean','publish']);
+gulp.task('build', ['publish']);
 //只编译，不浏览器化
-gulp.task('build2',['clean','publish:js','publish:css']);
+gulp.task('build2',['publish:js','publish:css']);
 

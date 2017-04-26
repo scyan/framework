@@ -1,7 +1,8 @@
 {
-  "presets": ["react","es2015", "stage-0"],
+  "presets": ["react","es2015", "stage-0","@alife/babel-preset-fusion"],
   "plugins": [
     "transform-decorators-legacy",
+    ['transform-es2015-modules-commonjs', { "loose": true }],
 	["module-alias", [
 	  
 	  { "src": "./src/components", "expose": "components" },

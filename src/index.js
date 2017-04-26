@@ -5,7 +5,7 @@ import './index.scss';
 
 import ReactDom from 'react-dom';
 import React, { PropTypes, Component } from 'react';
-class App extends Component{
+export default class App extends Component{
 	render(){
 		return (<div>hello world <Child/></div>)
 	}
